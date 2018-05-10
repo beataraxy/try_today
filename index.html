@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模仿慕课网选取头像</title>
+    <link rel="stylesheet" href="public.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="jquery-2.0.0.min.js"></script>
+</head>
+<body>
+<div class="area">
+    <div class="place">
+        <img class="user-img" src="sources/1.jpg">
+        <div class="update-avator" style="bottom: -30px">
+            <p>
+                <a class="js-avator-link"></a>
+            </p>
+        </div>
+
+    </div>
+</div>
+<!--弹窗-->
+<div class="modal-play" style="z-index: 901;opacity:1; display:none">
+    <div class="modal-layer" style="z-index: 901;visibility: visible;left: 559px;top: 200px;">
+        <div class="modal-title">
+            <div>
+                <span>更换头像</span>
+                <a class="modal-close">X</a>
+            </div>
+        </div>
+
+        <div class="modal-inner">
+            <div class="modal-dialog" style="display: block">
+                <div class="tpl-avator">
+                    <div class="modal-form-group avator-wapper">
+                        <div class="avator-mode">
+                            <img class="avator-img" src="sources/1.jpg" width="192" height="192">
+                        </div>
+                        <div class="clearfix">
+                            <a href="javascript:void(0)" class="js-avator-try pull-left">换一换</a>
+                            <form target="uploadtarget" action="postpic" method="post" enctype="multipart/form-data"
+                                  class="pull-right">
+                                <a href="javascript:void(0)" class="avator-btn-fake">上传头像</a>
+                                <input class="hide" type="file" title="上传头像" name="fileField" id="upload"
+                                       accept="image/gif,image/jpeg,image/jpg,image/png">
+                                <input class="hide" type="hidden" name="type" value="1">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-form-group">
+                        <div class="modal-input-control">
+                            <a href="" class="modal-btn model-btn-blue js-avator-save">确定</a>
+                            <a href="" class="modal-btn modal-btn-normal js-avator-cancel">取消</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-backout" style="z-index:800;opacity: 0.7;width: 1604px; height: 827px;display: none;"></div>
+
+</body>
+<script src="main.js"></script>
+
+</html>
