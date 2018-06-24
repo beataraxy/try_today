@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+<style>
+
+.container{
+    display:grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr ));
+    grid-template-rows: repeat(6,400px);
+}
+.container div{
+    text-align: center;
+    position:relative;
+}
+.container >div >img{
+    width: 100%;
+    height:100%;
+    object-fit:cover;
+    cursor: pointer;
+}
+.pic_info{
+    /* 垂直居中 */
+    display:flex;
+    position:absolute;
+    top:0;
+    left:0;
+    background:lightgray;
+    opacity:0.5;
+    width:100%;
+    height:100%;
+    text-align:left;
+    cursor:pointer;
+
+
+}
+.info_in{
+    display:block;
+    /* 垂直居中 */
+    margin:0 auto;
+    align-self:center;
+    font-size:24px;
+
+}
+</style>
+</head>
+<body>
+
+
+
+
+<div class="container">
+    <div><img src="https://images.pexels.com/photos/984941/pexels-photo-984941.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+    <span class="pic_info" style="display:none">
+        <a class="info_in"></a>
+    </span>
+    </div>
+
+    <div><img src="https://images.pexels.com/photos/1181378/pexels-photo-1181378.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+    <span class="pic_info" style="display:none">
+        <a class="info_in"></a>
+    </span>
+    </div>
+    <div><img src="https://images.pexels.com/photos/879474/pexels-photo-879474.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+    <span class="pic_info" style="display:none">
+        <a class="info_in"></a>
+    </span>
+    </div>
+    <div><img src="https://images.pexels.com/photos/867452/pexels-photo-867452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+    <span class="pic_info" style="display:none">
+        <a class="info_in"></a>
+    </span>
+    </div>
+    <div><img src="https://images.pexels.com/photos/861112/pexels-photo-861112.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+    <span class="pic_info" style="display:none">
+        <a class="info_in"></a>
+    </span>
+    </div>
+    <div><img src="https://images.pexels.com/photos/1167027/pexels-photo-1167027.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+    <span class="pic_info" style="display:none">
+        <a class="info_in"></a>
+    </span>
+    </div>
+</div>
+
+</body>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    // 将url中的值送入a
+    $(".container div").each(function(index, el) {
+        var s=$(this).children('img').attr('src').split("/")[4];
+        $(this).find('a').text(s);
+    });
+    // 动画效果实现
+    $(".container div").mouseover(function(event) {
+        $(this).children('span').css("display","");
+    });
+     $(".container div").mouseleave(function(event) {
+        $(this).children('span').css("display","none");
+    });
+});
+</script>
+</html>
